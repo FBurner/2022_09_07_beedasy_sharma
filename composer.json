@@ -1,0 +1,16 @@
+{
+    "require": {
+        "bramus/router": "^1.6",
+        "php-di/php-di": "^5.4",
+        "ext-mysqli": "*",
+        "psr/log": "^3.0",
+        "twig/twig": "^3.4",
+        "monolog/monolog": "^2.8",
+        "twig/intl-extra": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/classes/"
+        }
+    }
+}
