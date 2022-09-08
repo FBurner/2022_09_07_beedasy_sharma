@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Model\User;
 use App\Service\Controller;
 use App\Service\Repository\UserRepository;
+use JetBrains\PhpStorm\NoReturn;
 use Psr\Container\ContainerInterface;
 
 class UserController extends Controller
@@ -36,13 +37,13 @@ class UserController extends Controller
         $user->setPassword($_POST['password'] ?? null);
 
         if ($this->userRepository->authenticate($user)) {
-            $this->redirect('login');
+            $this->redirect('/login');
         } else {
             $this->render('login.html.twig', ['error' => 'Something is wrong !']);
         }
     }
 
-    public function logout()
+    #[NoReturn] public function logout(): void
     {
         session_destroy();
 
