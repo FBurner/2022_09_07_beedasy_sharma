@@ -10,6 +10,8 @@ $container = new DI\ContainerBuilder();
 
 $container->addDefinitions(require_once __DIR__.'/app/config.php');
 
+$container->addDefinitions(require_once __DIR__.'/app/definitions.php');
+
 $router = require_once __DIR__ . '/routes.php';
 
 $app = new Application($container->build(), $router);
