@@ -35,4 +35,10 @@ class Controller
     {
        echo $this->twig->render($template, $context);
     }
+
+    public function redirect(string $path): void
+    {
+        header(sprintf('Location: %s', $path));
+        die();
+    }
 }
