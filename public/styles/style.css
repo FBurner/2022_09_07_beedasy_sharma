@@ -523,4 +523,15 @@ input[disabled] {
 
 .header .menu li {
     float: left;
+    padding: 0 10px 0 0;
+}
+.header .menu .left li {
+    float: left;
+    padding: 0 10px 0 0;
+}
+
+
+.header .menu .right li {
+    float: left;
+    padding: 0 0 0 10px;
 }
