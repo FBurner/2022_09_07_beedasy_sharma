@@ -8,7 +8,7 @@ use Bramus\Router\Router;
 use DI\Container;
 use Psr\Container\ContainerInterface;
 
-class App
+class Application
 {
     private ContainerInterface $container;
 

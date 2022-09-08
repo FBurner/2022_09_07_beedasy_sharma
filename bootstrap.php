@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-use App\Service\App;
+use App\Service\Application;
 
-require_once __DIR__.'vendor/autoload.php';
+require_once __DIR__.'/vendor/autoload.php';
 
 $container = new DI\Container();
 
-$router = require_once __DIR__ . 'routes.php';
+$router = require_once __DIR__ . '/routes.php';
 
-$app = new App($container, $router);
+$app = new Application($container, $router);
 
 $app->run();

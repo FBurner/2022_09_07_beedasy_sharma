@@ -16,5 +16,5 @@ return array(
     'Laravel\\SerializableClosure\\' => array($vendorDir . '/laravel/serializable-closure/src'),
     'Invoker\\' => array($vendorDir . '/php-di/invoker/src'),
     'DI\\' => array($vendorDir . '/php-di/php-di/src'),
-    'App\\' => array($baseDir . '/src'),
+    'App\\' => array($baseDir . '/app'),
 );
