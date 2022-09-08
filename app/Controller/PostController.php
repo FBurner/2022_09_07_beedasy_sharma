@@ -16,6 +16,8 @@ class PostController extends Controller
 
     public function index(): void
     {
+        $allPosts = $this->postService->all();
+
         echo 'lol';
     }
 }
