@@ -4,20 +4,21 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Service\Repository\PostRepository;
+use App\Service\Controller;
+use App\Service\Repository\UserRepository;
 use Psr\Container\ContainerInterface;
 
-class UserController
+class UserController extends Controller
 {
-    private PostRepository $postService;
+    private UserRepository $userRepository;
 
-    public function __construct(PostRepository $postService, ContainerInterface $container)
+    public function __construct(UserRepository $userRepository, ContainerInterface $container)
     {
         parent::__construct($container);
 
-        $this->postService = $postService;
+        $this->userRepository = $userRepository;
     }
-    
+
     public function login()
     {
 
