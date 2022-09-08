@@ -13,8 +13,8 @@ class Controller
         $this->twig = $twig;
     }
 
-    public function render(string $template, array $context = [])
+    public function render(string $template, array $context = []): void
     {
-        $this->twig->render('index.html.twig', ['posts' => $posts]);
+       echo $this->twig->render($template, $context);
     }
 }
