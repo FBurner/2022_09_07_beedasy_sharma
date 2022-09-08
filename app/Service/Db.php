@@ -6,7 +6,7 @@ namespace App\Service;
 
 class Db
 {
-    public function __construct()
+    public function __construct(string $host, string $username, string $password)
     {
 
     }
