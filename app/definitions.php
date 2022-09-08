@@ -6,8 +6,8 @@ use App\Controller\PostController;
 use App\Service\Db;
 use App\Service\Repository\PostRepository;
 use Psr\Container\ContainerInterface;
-use Twig\Environment;
-use Twig\Loader\FilesystemLoader as Twig;
+use Twig\Environment as Twig;
+use Twig\Loader\FilesystemLoader;
 
 return [
     Db::class => function (ContainerInterface $c) {
@@ -16,10 +16,10 @@ return [
     Twig::class => function (ContainerInterface $c) {
         $loader = new FilesystemLoader(__DIR__ . '/../templates');
 
-        return new Environment($loader);
+        return new Twig($loader);
     },
     PostRepository::class => function (ContainerInterface $c) {
-        return new PostRepository($c->get('Db'));
+        return new PostRepository($c->get(Db::class));
     },
     PostController::class => function (ContainerInterface $c) {
         $controller = new PostController($c->get(PostRepository::class));
