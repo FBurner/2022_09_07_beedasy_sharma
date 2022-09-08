@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS posts
     title   varchar(1000),
     body    text,
     user_id INT,
+    PRIMARY KEY (post_id),
     FOREIGN KEY (user_id)
         REFERENCES users(user_id)
         ON DELETE SET NULL
