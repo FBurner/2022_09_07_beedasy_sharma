@@ -3,20 +3,22 @@
 namespace App\Service;
 
 use App\Model\User as AuthenticatedUser;
-use Twig\Environment;
+use Psr\Container\ContainerInterface;
+use Twig\Environment as Twig;
 
 class Controller
 {
-    protected Environment $twig;
+    protected Twig $twig;
 
     protected ?AuthenticatedUser $user;
 
-    public function __construct()
+    public function __construct(ContainerInterface $container)
     {
-        
+        $this->setTemplatingEngine($container->get(Twig::class));
+        $this->setAuthenticatedUser($container->get(Twig::class));
     }
 
-    public function setTemplatingEngine(Environment $twig): void
+    public function setTemplatingEngine(Twig $twig): void
     {
         $this->twig = $twig;
     }
