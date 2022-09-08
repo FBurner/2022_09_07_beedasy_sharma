@@ -42,6 +42,11 @@ class UserRepository extends BaseRepository
             return false;
         }
 
+        return $this->authenticateAgainstDb();
+    }
+
+    private function authenticateAgainstDb(): bool
+    {
         $user = $this->db->query('SELECT * FROM users WHERE email LIKE ?');
     }
 }
