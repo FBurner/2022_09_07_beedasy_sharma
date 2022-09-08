@@ -6,5 +6,5 @@ namespace App\Contracts;
 
 interface Router
 {
-    
+
 }
