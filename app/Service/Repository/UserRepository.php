@@ -4,6 +4,8 @@ namespace App\Service\Repository;
 
 use App\Model\User;
 use App\Service\BaseRepository;
+use Symfony\Component\Validator\Constraints;
+use Symfony\Component\Validator\Validation;
 
 class UserRepository extends BaseRepository
 {
@@ -16,6 +18,12 @@ class UserRepository extends BaseRepository
 
     public function authenticate(User $user): bool
     {
+        $validator = Validation::createValidator();
+        $violations = $validator->validate('Bernhard', [
+            new Constraints\Length(['min' => 10]),
+            new Constraints\NotBlank(),
+        ]);
+
         return false;
     }
 }
