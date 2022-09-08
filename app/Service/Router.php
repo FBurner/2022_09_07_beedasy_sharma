@@ -6,9 +6,12 @@ namespace App\Service;
 
 use App\Contracts\Router as RouterContract;
 use Bramus\Router\Router as BaseRouter;
+use Psr\Container\ContainerInterface;
 
 class Router extends BaseRouter implements RouterContract
 {
+    private ContainerInterface $container;
+
     public function match($methods, $pattern, $fn)
     {
         $controller = new $fn[0]();

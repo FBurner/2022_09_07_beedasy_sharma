@@ -15,6 +15,7 @@ return [
     },
     'Twig' => function(ContainerInterface $c) {
         $loader = new FilesystemLoader(__DIR__.'/../templates');
+
         return new Environment($loader);
     },
     'PostService' => function(ContainerInterface $c) {
