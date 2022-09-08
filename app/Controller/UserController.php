@@ -24,6 +24,11 @@ class UserController extends Controller
         $this->render('login.html.twig', []);
     }
 
+    public function actionLogin()
+    {
+
+    }
+
     public function logout()
     {
 
