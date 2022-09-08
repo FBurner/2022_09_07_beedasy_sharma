@@ -9,5 +9,9 @@ use Bramus\Router\Router as BaseRouter;
 
 class Router extends BaseRouter implements RouterContract
 {
+    public function match($methods, $pattern, $fn)
+    {
 
+        parent::match($methods, $pattern, $fn);
+    }
 }
