@@ -29,10 +29,10 @@ class UserController extends Controller
     {
         $user = new User();
 
-        $user->setEmail($_POST['email']);
-        $user->setPassword($_POST['password']);
+        $user->setEmail($_POST['email'] ?? null);
+        $user->setPassword($_POST['password'] ?? null);
 
-        if($this->userRepository->authenticate($user)) {
+        if ($this->userRepository->authenticate($user)) {
             $this->redirect('login');
         } else {
             $this->render('login.html.twig', ['error' => 'Something is wrong !']);
