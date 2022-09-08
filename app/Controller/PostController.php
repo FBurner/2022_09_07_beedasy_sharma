@@ -6,6 +6,6 @@ class PostController
 {
     public function index(): void
     {
-
+        echo 'lol';
     }
 }

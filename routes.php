@@ -6,6 +6,8 @@ use App\Service\Router;
 
 $router = new Router();
 
-$router->get('/', 'PostController');
+$router->setNamespace('\App\Controller');
+
+$router->get('/', 'PostController@index');
 
 return $router;
