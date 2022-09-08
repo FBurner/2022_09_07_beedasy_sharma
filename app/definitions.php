@@ -16,9 +16,7 @@ return [
     'Twig' => function(ContainerInterface $c) {
         $loader = new FilesystemLoader(__DIR__.'/../templates');
 
-        $twig = new Environment($loader);
-        $twig->setExtensions(['html.twig']);
-        return  $twig;
+        return new Environment($loader);
     },
     'PostService' => function(ContainerInterface $c) {
         return new PostService($c->get('Db'));
