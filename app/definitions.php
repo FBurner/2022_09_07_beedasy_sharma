@@ -17,7 +17,6 @@ return [
     },
     Twig::class => function (ContainerInterface $c) {
         $loader = new FilesystemLoader(__DIR__ . '/../templates');
-
         return new Twig($loader);
     },
     UserRepository::class => function (ContainerInterface $c) {
@@ -30,6 +29,6 @@ return [
         return new PostController($c->get(PostRepository::class), $c);
     },
     UserController::class => function (ContainerInterface $c) {
-    return new UserController($c->get(UserRepository::class), $c);
-}
+        return new UserController($c->get(UserRepository::class), $c);
+    }
 ];
