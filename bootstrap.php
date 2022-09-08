@@ -6,6 +6,7 @@ use App\Service\Application;
 use App\Service\Router;
 
 require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__.'/app/routes.php';
 
 $containerBuilder = new DI\ContainerBuilder();
 
@@ -17,7 +18,7 @@ $container = $containerBuilder->build();
 
 $router = new Router($container);
 
-$router->match('GET', '/', ['PostController', 'index']);
+routes($router);
 
 $app = new Application($container, $router);
 
