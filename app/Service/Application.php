@@ -18,13 +18,6 @@ class Application
         $this->container = $container;
 
         $this->router = $router;
-
-        $this->registerConfigs();
-    }
-    
-    private function registerConfigs(): void
-    {
-        $this->container->
     }
 
     public function run(): void
