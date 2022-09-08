@@ -13,7 +13,7 @@ class Controller
     {
         $this->twig = $twig;
 
-        $this->twig->addGlobal('user', $user);
+        $this->twig->addGlobal('authenticatedUser', $user);
     }
 
     public function render(string $template, array $context = []): void
