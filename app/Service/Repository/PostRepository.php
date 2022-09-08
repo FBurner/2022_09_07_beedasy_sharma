@@ -10,7 +10,6 @@ class PostRepository extends BaseRepository
 {
     public function all(): array
     {
-
         return $this->db->query('SELECT * FROM posts');
     }
 }
