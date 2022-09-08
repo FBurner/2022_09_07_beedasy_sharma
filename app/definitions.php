@@ -20,7 +20,7 @@ return [
         return new Twig($loader);
     },
     UserRepository::class => function (ContainerInterface $c) {
-        return new PostRepository($c->get(Db::class));
+        return new UserRepository($c->get(Db::class));
     },
     PostRepository::class => function (ContainerInterface $c) {
         return new PostRepository($c->get(Db::class));

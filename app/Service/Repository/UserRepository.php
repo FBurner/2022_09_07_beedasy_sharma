@@ -7,7 +7,7 @@ use App\Service\BaseRepository;
 
 class UserRepository extends BaseRepository
 {
-    private ?User $authenticatedUser;
+    private ?User $authenticatedUser = null;
 
     public function getAuthenticatedUser(): ?User
     {
