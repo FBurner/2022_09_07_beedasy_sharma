@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Model\User;
 use App\Service\Controller;
 use App\Service\Repository\UserRepository;
 use Psr\Container\ContainerInterface;
@@ -26,7 +27,11 @@ class UserController extends Controller
 
     public function actionLogin()
     {
+        $user = new User();
 
+        $user->setEmail($_POST['email']);
+
+        $this->userRepository->authenticate($user);
     }
 
     public function logout()
