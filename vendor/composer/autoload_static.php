@@ -9,7 +9,6 @@ class ComposerStaticInit16eeab97a343afafd87567a12a7c47e3
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        'bbf73f3db644d3dced353b837903e74c' => __DIR__ . '/..' . '/php-di/php-di/src/DI/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -27,21 +26,10 @@ class ComposerStaticInit16eeab97a343afafd87567a12a7c47e3
         'P' => 
         array (
             'Psr\\Log\\' => 8,
-            'Psr\\Container\\' => 14,
-            'PhpDocReader\\' => 13,
         ),
         'M' => 
         array (
             'Monolog\\' => 8,
-        ),
-        'I' => 
-        array (
-            'Invoker\\' => 8,
-            'Interop\\Container\\' => 18,
-        ),
-        'D' => 
-        array (
-            'DI\\' => 3,
         ),
         'A' => 
         array (
@@ -74,29 +62,9 @@ class ComposerStaticInit16eeab97a343afafd87567a12a7c47e3
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
         ),
-        'Psr\\Container\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/container/src',
-        ),
-        'PhpDocReader\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/php-di/phpdoc-reader/src/PhpDocReader',
-        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
-        ),
-        'Invoker\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/php-di/invoker/src',
-        ),
-        'Interop\\Container\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
-        ),
-        'DI\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/php-di/php-di/src/DI',
         ),
         'App\\' => 
         array (

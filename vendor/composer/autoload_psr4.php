@@ -12,11 +12,6 @@ return array(
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Symfony\\Component\\Intl\\' => array($vendorDir . '/symfony/intl'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
-    'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
-    'PhpDocReader\\' => array($vendorDir . '/php-di/phpdoc-reader/src/PhpDocReader'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
-    'Invoker\\' => array($vendorDir . '/php-di/invoker/src'),
-    'Interop\\Container\\' => array($vendorDir . '/container-interop/container-interop/src/Interop/Container'),
-    'DI\\' => array($vendorDir . '/php-di/php-di/src/DI'),
     'App\\' => array($baseDir . '/src'),
 );
