@@ -11,7 +11,7 @@ use Twig\Loader\FilesystemLoader;
 
 return [
     'Db' => function (ContainerInterface $c) {
-        return new Db($c->get('db')['host'], $c->get('db.')['username'], $c->get('db.')['password']);
+        return new Db($c->get('db')['host'], $c->get('db')['username'], $c->get('db')['password']);
     },
     'Twig' => function (ContainerInterface $c) {
         $loader = new FilesystemLoader(__DIR__ . '/../templates');
