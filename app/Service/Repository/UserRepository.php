@@ -49,6 +49,10 @@ class UserRepository extends BaseRepository
     {
         $dbUser = $this->db->query('SELECT * FROM users WHERE email LIKE ?');
 
-        if(empty($dbUser) || sha2$dbUser['password'] != $dbUser)
+        if (empty($dbUser) || hash('sha256', $dbUser['password']) != $dbUser) {
+            return false;
+        }
+
+        return true;
     }
 }
