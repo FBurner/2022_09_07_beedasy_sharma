@@ -33,7 +33,7 @@ class UserController extends Controller
         $user->setPassword($_POST['password']);
 
         if($this->userRepository->authenticate($user)) {
-
+            $this->redirect('login');
         } else {
             $this->render('login.html.twig', ['error' => 'Something is wrong !']);
         }
