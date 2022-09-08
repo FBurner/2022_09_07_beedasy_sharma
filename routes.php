@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Bramus\Router\Router;
+use App\Service\Router;
 
 $router = new Router();
 

@@ -22,6 +22,6 @@ class Application
 
     public function run(): void
     {
-
+        $this->router->run();
     }
 }
