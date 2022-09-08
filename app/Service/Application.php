@@ -15,8 +15,6 @@ class Application
 
     public function __construct(Container $container, Router $router)
     {
-
-
         $this->container = $container;
 
         $this->router = $router;
