@@ -361,3 +361,7 @@ input[disabled] {
 .error {
     color:red;
 }
+
+.row {}
+.left {float: left}
+.right {float: right}
