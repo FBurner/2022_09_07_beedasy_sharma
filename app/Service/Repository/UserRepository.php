@@ -19,9 +19,20 @@ class UserRepository extends BaseRepository
     public function authenticate(User $user): bool
     {
         $validator = Validation::createValidator();
-        $violations = $validator->validate($user->getEmail(), [
-            new Constraints\Length(['min' => 10]),
-            new Constraints\NotBlank(),
+        $violations = $validator->validate(
+            [
+                'email' => $user->getEmail(),
+                'password' => $user->getPassword()
+            ], [
+                'email' => [
+                    new Constraints\Length(['min' => 10]),
+                    new Constraints\NotBlank(),
+                ],
+                'password' =>
+                [
+                    new Constraints\Length(['min' => 10]),
+                    new Constraints\NotBlank(),
+                ]
         ]);
 
         return false;
