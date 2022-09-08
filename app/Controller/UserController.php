@@ -22,6 +22,9 @@ class UserController extends Controller
 
     public function login()
     {
+        if (!empty($this->user)) {
+            $this->redirect('/');
+        }
         $this->render('login.html.twig');
     }
 
@@ -41,6 +44,8 @@ class UserController extends Controller
 
     public function logout()
     {
+        session_destroy();
 
+        $this->redirect('/login');
     }
 }
