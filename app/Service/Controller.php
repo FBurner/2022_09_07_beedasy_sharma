@@ -11,6 +11,11 @@ class Controller
 
     protected ?AuthenticatedUser $user;
 
+    public function __construct()
+    {
+        
+    }
+
     public function setTemplatingEngine(Environment $twig): void
     {
         $this->twig = $twig;
