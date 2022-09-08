@@ -41,5 +41,7 @@ class UserRepository extends BaseRepository
         if ($violations->count() > 0) {
             return false;
         }
+
+        $user = $this->db->query('SELECT * FROM users WHERE email LIKE ?');
     }
 }
