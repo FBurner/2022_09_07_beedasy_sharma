@@ -4,7 +4,7 @@
     {% for post in posts %}
         <div>
         <h1><a href="/posts/{{ post.post_id }}">{{ post.title }}</a></h1>
-        {{ post.body }}
+        {{ post.body | u.truncate(1000) }}
         </div>
     {% endfor %}
 {% endblock %}

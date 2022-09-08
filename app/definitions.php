@@ -9,6 +9,7 @@ use App\Service\Repository\PostRepository;
 use App\Service\Repository\UserRepository;
 use Psr\Container\ContainerInterface;
 use Twig\Environment as Twig;
+use Twig\Extra\String\StringExtension;
 use Twig\Loader\FilesystemLoader;
 
 return [
@@ -18,7 +19,7 @@ return [
     Twig::class => function (ContainerInterface $c) {
         $loader = new FilesystemLoader(__DIR__ . '/../templates');
         $twig = new Twig($loader);
-        $twig->addExtension(new \Twig\Extension\StringLoaderExtension());
+        $twig->addExtension(new StringExtension());
 
         return $twig;
     },
