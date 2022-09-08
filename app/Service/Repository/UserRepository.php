@@ -6,5 +6,5 @@ use App\Service\BaseRepository;
 
 class UserRepository extends BaseRepository
 {
-
+    private \User $authenticatedUser;
 }
