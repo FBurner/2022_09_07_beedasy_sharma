@@ -18,6 +18,6 @@ class PostController extends Controller
     {
         $posts = $this->postService->all();
 
-        $this->twig->render('index.html.twig', ['posts' => $posts]);
+        echo $this->twig->render('index.html.twig', ['posts' => $posts]);
     }
 }

@@ -12,4 +12,9 @@ class Controller
     {
         $this->twig = $twig;
     }
+
+    public function render(string $template, array $context = [])
+    {
+        $this->twig->render('index.html.twig', ['posts' => $posts]);
+    }
 }
