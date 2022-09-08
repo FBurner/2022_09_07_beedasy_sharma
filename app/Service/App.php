@@ -10,4 +10,9 @@ class App
     {
         $this->container = $container;
     }
+
+    public function run(): void
+    {
+
+    }
 }
