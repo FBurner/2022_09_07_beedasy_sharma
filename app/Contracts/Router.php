@@ -6,5 +6,5 @@ namespace App\Contracts;
 
 interface Router
 {
-
+    public function match($methods, $pattern, $fn);
 }
