@@ -23,6 +23,6 @@ class Application
 
     public function run(): void
     {
-
+    echo 'lol';
     }
 }
