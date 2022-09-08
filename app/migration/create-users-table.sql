@@ -1,3 +1,5 @@
-CREATE TABLE if not exists users (
-    user_id int
+CREATE TABLE IF NOT EXISTS users (
+    user_id INT NOT NULL AUTO_INCREMENT,
+    email varchar(255),
+    name varchar(255)
 )
