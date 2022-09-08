@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Controller\PostController;
+use App\Controller\UserController;
 use App\Service\Db;
 use App\Service\Repository\PostRepository;
 use App\Service\Repository\UserRepository;
@@ -27,5 +28,8 @@ return [
     },
     PostController::class => function (ContainerInterface $c) {
         return new PostController($c->get(PostRepository::class), $c);
-    }
+    },
+    UserController::class => function (ContainerInterface $c) {
+    return new UserController($c->get(UserRepository::class), $c);
+}
 ];
