@@ -6,4 +6,6 @@ use App\Controller\PostController;
 function routes(Router $router): void
 {
     $router->match('GET', '/', [PostController::class, 'index']);
+    $router->match('GET', '/login', [PostController::class, 'index']);
+    $router->match('GET', '/logout', [PostController::class, 'index']);
 }
