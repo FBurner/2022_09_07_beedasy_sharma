@@ -2,17 +2,18 @@
 
 namespace App\Service;
 
+use App\Model\User as AuthenticatedUser;
 use Twig\Environment;
 
 class Controller
 {
     protected Environment $twig;
 
-    public function setTemplatingEngine(Environment $twig): void
+    public function setTemplatingEngine(Environment $twig, ?AuthenticatedUser $user): void
     {
         $this->twig = $twig;
 
-        $this->twig->addGlobal('user');
+        $this->twig->addGlobal('user', $user);
     }
 
     public function render(string $template, array $context = []): void
