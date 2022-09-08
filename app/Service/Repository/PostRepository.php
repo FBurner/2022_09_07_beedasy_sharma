@@ -10,7 +10,7 @@ class PostRepository extends BaseRepository
 {
     public function all(): array
     {
-        $this->db
+        $this->db->e
         return [];
     }
 }
