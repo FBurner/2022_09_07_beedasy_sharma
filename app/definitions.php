@@ -17,7 +17,10 @@ return [
     },
     Twig::class => function (ContainerInterface $c) {
         $loader = new FilesystemLoader(__DIR__ . '/../templates');
-        return new Twig($loader);
+        $twig = new Twig($loader);
+        $twig->addExtension(new \Twig\Extension\StringLoaderExtension());
+
+        return $twig;
     },
     UserRepository::class => function (ContainerInterface $c) {
         return new UserRepository($c->get(Db::class));
