@@ -17,7 +17,7 @@ class PostController extends Controller
     public function index(): void
     {
         $posts = $this->postService->all();
-
+echo 'lol';
         $this->twig->render('index.html.twig', ['posts' => $posts]);
     }
 }
