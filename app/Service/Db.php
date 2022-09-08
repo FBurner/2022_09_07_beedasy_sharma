@@ -23,8 +23,10 @@ class Db
         );
     }
 
-    public function query(string $query, ...$params)
+    public function query(string $query, ...$params): bool|array
     {
-        $this->pdo->prepare($query, ...$params);
+        $stmt = $this->pdo->prepare($query, ...$params);
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
