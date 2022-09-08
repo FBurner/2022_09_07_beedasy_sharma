@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS users
+CREATE TABLE IF NOT EXISTS posts
 (
     user_id  INT NOT NULL AUTO_INCREMENT,
     email    varchar(255),
