@@ -1,7 +1,9 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-    <form>
-        <label><input type="text"></label>
+    <form method="post" action="/login">
+        <label>Benutzername: <input type="text"></label>
+        <label>Passwort: <input type="password"></label>
+        <input type="submit">
     </form>
 {% endblock %}
