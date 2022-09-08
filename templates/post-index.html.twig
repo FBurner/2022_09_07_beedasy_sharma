@@ -2,7 +2,9 @@
 
 {% block content %}
     {% for post in posts %}
-        <a href="/posts/{{ post.post_id }}">{{ post.title }}</a>
+        <div>
+        <h1><a href="/posts/{{ post.post_id }}">{{ post.title }}</a></h1>
         {{ post.body }}
+        </div>
     {% endfor %}
 {% endblock %}
