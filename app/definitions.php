@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use App\Controller\PostController;
 use App\Service\Db;
-use App\Service\PostService;
+use App\Service\Repository\PostRepository;
 use Psr\Container\ContainerInterface;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
@@ -19,7 +19,7 @@ return [
         return new Environment($loader);
     },
     'PostService' => function (ContainerInterface $c) {
-        return new PostService($c->get('Db'));
+        return new PostRepository($c->get('Db'));
     },
     'App\Controller\PostController' => function (ContainerInterface $c) {
         $controller = new PostController($c->get('PostService'));

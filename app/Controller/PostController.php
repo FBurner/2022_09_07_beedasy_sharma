@@ -3,13 +3,13 @@
 namespace App\Controller;
 
 use App\Service\Controller;
-use App\Service\PostService;
+use App\Service\Repository\PostRepository;
 
 class PostController extends Controller
 {
-    private PostService $postService;
+    private PostRepository $postService;
 
-    public function __construct(PostService $postService)
+    public function __construct(PostRepository $postService)
     {
         $this->postService = $postService;
     }
