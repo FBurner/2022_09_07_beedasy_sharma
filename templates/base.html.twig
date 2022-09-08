@@ -5,9 +5,6 @@
 </head>
 <body>
 {{ include('sidebar.html') }}
-
-{% for post in posts %}
-    <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
-{% endfor %}
+{% block content %}{% endblock %}
 </body>
 </html>
