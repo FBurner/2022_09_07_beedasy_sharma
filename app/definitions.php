@@ -10,6 +10,6 @@ return [
         return new Db();
     },
     'Twig' => function(ContainerInterface $c) {
-        $loader = new Twig_Loader_Filesy(__DIR__.'/../templates');
+        $loader = new \Twig\Loader\FilesystemLoader(__DIR__.'/../templates');
     }
 ];
