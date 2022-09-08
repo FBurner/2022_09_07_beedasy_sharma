@@ -12,8 +12,11 @@
             <li>Impressum</li>
         </ul>
         <ul class="right">
-            {{ authenticatedUser }}
-            <li>Login\Logout</li>
+            {% if authenticatedUser %}
+                <li>Logout</li>
+            {% else %}
+                <li>Login</li>
+            {% endif %}
         </ul>
     </div>
 </div>
