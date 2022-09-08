@@ -8,6 +8,6 @@ $router = new Router();
 
 $router->setNamespace('\App\Controller');
 
-$router->get('/', 'PostController@index');
+$router->match('GET', '/', ['PostController', 'index']);
 
 return $router;
