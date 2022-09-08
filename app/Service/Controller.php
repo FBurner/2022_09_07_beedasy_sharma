@@ -3,6 +3,7 @@
 namespace App\Service;
 
 use App\Model\User as AuthenticatedUser;
+use App\Service\Repository\UserRepository;
 use Psr\Container\ContainerInterface;
 use Twig\Environment as Twig;
 
@@ -15,7 +16,7 @@ class Controller
     public function __construct(ContainerInterface $container)
     {
         $this->setTemplatingEngine($container->get(Twig::class));
-        $this->setAuthenticatedUser($container->get(Twig::class));
+        $this->setAuthenticatedUser($container->get(UserRepository::class)->getAuthenticatedUser());
     }
 
     public function setTemplatingEngine(Twig $twig): void

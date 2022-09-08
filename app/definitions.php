@@ -26,10 +26,6 @@ return [
         return new PostRepository($c->get(Db::class));
     },
     PostController::class => function (ContainerInterface $c) {
-        $controller = new PostController($c->get(PostRepository::class), $c);
-
-        $controller->setTemplatingEngine($c->get(Twig::class));
-
-        return $controller;
+        return new PostController($c->get(PostRepository::class), $c);
     }
 ];
