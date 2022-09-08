@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Controller\PostController;
 use App\Service\Db;
 use App\Service\Repository\PostRepository;
+use App\Service\Repository\UserRepository;
 use Psr\Container\ContainerInterface;
 use Twig\Environment as Twig;
 use Twig\Loader\FilesystemLoader;
@@ -17,6 +18,9 @@ return [
         $loader = new FilesystemLoader(__DIR__ . '/../templates');
 
         return new Twig($loader);
+    },
+    UserRepository::class => function (ContainerInterface $c) {
+        return new UserRepository($c->get(Db::class));
     },
     PostRepository::class => function (ContainerInterface $c) {
         return new PostRepository($c->get(Db::class));
