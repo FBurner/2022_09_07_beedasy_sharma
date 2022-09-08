@@ -12,4 +12,4 @@ if (!$conn->connect_errno) {
     } else echo "<p class='bad'>Unable to select database <b><?=$db?></b></p>";
 } else echo "<p class='bad'>Unable to connect to <b>MySql server</b></p>";
 
-
+require_once __DIR__.'/../bootstrap.php';
