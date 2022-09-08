@@ -53,6 +53,9 @@ class UserRepository extends BaseRepository
             return false;
         }
 
+        $user->setPassword(null);
+        $_SESSION['user'] = $user;
+
         return true;
     }
 }
