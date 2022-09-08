@@ -8,7 +8,8 @@ use PDO;
 
 class Db
 {
-    private
+    private PDO $pdo;
+
     public function __construct(string $host, string $username, string $password)
     {
         $pdo = new PDO('mysql:host=localhost;dbname=myDatabase;charset=utf8mb4', "username", "password", [
