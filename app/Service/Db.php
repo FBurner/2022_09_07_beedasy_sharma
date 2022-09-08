@@ -22,4 +22,9 @@ class Db
             ]
         );
     }
+
+    public function query(string $query, ...$params)
+    {
+        $this->pdo->prepare($query, ...$params);
+    }
 }
