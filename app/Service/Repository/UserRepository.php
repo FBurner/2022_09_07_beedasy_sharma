@@ -42,14 +42,14 @@ class UserRepository extends BaseRepository
             return false;
         }
 
-        return $this->authenticateAgainstDb();
+        return $this->authenticateAgainstDb($user);
     }
 
     private function authenticateAgainstDb(User $user): bool
     {
         $dbUser = $this->db->query('SELECT * FROM users WHERE email LIKE ?', $user->getEmail());
-
-        if (empty($dbUser) || hash('sha256', $user->getPassword()) != $dbUser) {
+var_dump($dbUser);die;
+        if (empty($dbUser) || hash('sha256', $user->getPassword()) != $dbUser[0]['password']) {
             return false;
         }
 
