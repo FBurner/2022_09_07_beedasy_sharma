@@ -10,10 +10,10 @@ use Twig\Environment;
 use Twig\Loader\FilesystemLoader as Twig;
 
 return [
-    'Db' => function (ContainerInterface $c) {
+    Db::class => function (ContainerInterface $c) {
         return new Db($c->get('db')['host'], $c->get('db')['dbname'], $c->get('db')['username'], $c->get('db')['password']);
     },
-    'Twig' => function (ContainerInterface $c) {
+    Twig::class => function (ContainerInterface $c) {
         $loader = new FilesystemLoader(__DIR__ . '/../templates');
 
         return new Environment($loader);
@@ -24,7 +24,7 @@ return [
     PostController::class => function (ContainerInterface $c) {
         $controller = new PostController($c->get(PostRepository::class));
 
-        $controller->setTemplatingEngine($c->get('Twig'));
+        $controller->setTemplatingEngine($c->get(Twig::class));
 
         return $controller;
     }
