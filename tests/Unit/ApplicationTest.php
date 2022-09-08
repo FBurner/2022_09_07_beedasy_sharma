@@ -2,7 +2,9 @@
 
 namespace Unit;
 
-class ApplicationTest
+use PHPUnit\Framework\TestCase;
+
+final class ApplicationTest extends TestCase
 {
 
 }
