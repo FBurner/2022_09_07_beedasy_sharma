@@ -11,7 +11,8 @@ class Router extends BaseRouter implements RouterContract
 {
     public function match($methods, $pattern, $fn)
     {
+        $controller = new $fn[0]();
 
-        parent::match($methods, $pattern, $fn);
+        parent::match($methods, $pattern, [$controller, $fn[1]]);
     }
 }
