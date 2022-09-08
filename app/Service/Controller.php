@@ -9,11 +9,18 @@ class Controller
 {
     protected Environment $twig;
 
-    public function setTemplatingEngine(Environment $twig, ?AuthenticatedUser $user): void
+    protected ?AuthenticatedUser $user;
+
+    public function setTemplatingEngine(Environment $twig): void
     {
         $this->twig = $twig;
+    }
 
-        $this->twig->addGlobal('authenticatedUser', $user);
+    public function setAuthenticatedUser(?AuthenticatedUser $user): void
+    {
+        $this->user = $user;
+
+        $this->twig->addGlobal('authenticatedUser', $this->user);
     }
 
     public function render(string $template, array $context = []): void
