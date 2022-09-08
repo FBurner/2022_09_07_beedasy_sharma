@@ -3,17 +3,22 @@
 declare(strict_types=1);
 
 use App\Service\Application;
+use App\Service\Router;
 
 require_once __DIR__.'/vendor/autoload.php';
 
-$container = new DI\ContainerBuilder();
+$containerBuilder = new DI\ContainerBuilder();
 
-$container->addDefinitions(require_once __DIR__.'/app/config.php');
+$containerBuilder->addDefinitions(require_once __DIR__.'/app/config.php');
 
-$container->addDefinitions(require_once __DIR__.'/app/definitions.php');
+$containerBuilder->addDefinitions(require_once __DIR__.'/app/definitions.php');
 
-$router = require_once __DIR__ . '/routes.php';
+$container = $containerBuilder->build();
 
-$app = new Application($container->build(), $router);
+$router = new Router($container);
+
+$router->match('GET', '/', ['PostController', 'index']);
+
+$app = new Application($container, $router);
 
 $app->run();

@@ -6,7 +6,12 @@ namespace App\Service;
 
 class PostService
 {
-    public function __construct(\Db $db)
+    public function __construct(Db $db)
+    {
+
+    }
+
+    public function all()
     {
 
     }
