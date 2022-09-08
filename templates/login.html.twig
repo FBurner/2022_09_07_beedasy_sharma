@@ -1,6 +1,9 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
     <form method="post" action="/login">
         <label>Benutzername: <input type="text"></label>
         <label>Passwort: <input type="password"></label>
