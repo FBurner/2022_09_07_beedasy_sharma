@@ -22,6 +22,10 @@ return [
         return new PostService($c->get('Db'));
     },
     'App\Controller\PostController' => function(ContainerInterface $c) {
-        return new PostController($c->get('PostService'));
+        $controller = new PostController($c->get('PostService'));
+
+        $controller->setTemplatingEngine($c->get('Twig'));
+
+        return $controller;
     }
 ];
