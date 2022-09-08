@@ -22,7 +22,7 @@ class UserController extends Controller
 
     public function login()
     {
-        $this->render('login.html.twig', []);
+        $this->render('login.html.twig');
     }
 
     public function actionLogin()
@@ -30,8 +30,13 @@ class UserController extends Controller
         $user = new User();
 
         $user->setEmail($_POST['email']);
+        $user->setPassword($_POST['password']);
 
-        $this->userRepository->authenticate($user);
+        if($this->userRepository->authenticate($user)) {
+
+        } else {
+            $this->render('login.html.twig', ['error' => 'Something is wrong !']);
+        }
     }
 
     public function logout()
