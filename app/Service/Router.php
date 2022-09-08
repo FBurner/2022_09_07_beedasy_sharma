@@ -12,10 +12,13 @@ class Router extends BaseRouter implements RouterContract
 {
     private ContainerInterface $container;
 
+    public function __construct(ContainerInterface $container)
+    {
+        $this->container = $container;
+    }
+
     public function match($methods, $pattern, $fn)
     {
-        $controller = new $fn[0]();
-
-        parent::match($methods, $pattern, [$controller, $fn[1]]);
+        parent::match($methods, $pattern, [$this->container->get($fn[0]), $fn[1]]);
     }
 }
