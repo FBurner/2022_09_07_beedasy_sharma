@@ -6,8 +6,6 @@ use App\Service\Router;
 
 $router = new Router();
 
-$router->get('/', function () use($container) {
-    echo 'lol';
-});
+$router->get('/', 'PostController');
 
 return $router;
