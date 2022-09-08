@@ -21,7 +21,7 @@ return [
     'PostService' => function(ContainerInterface $c) {
         return new PostService($c->get('Db'));
     },
-    'PostController' => function(ContainerInterface $c) {
+    'App\Controller\PostController' => function(ContainerInterface $c) {
         return new PostController($c->get('PostService'));
     }
 ];

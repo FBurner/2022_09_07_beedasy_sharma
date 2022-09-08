@@ -11,8 +11,8 @@ class PostService
 
     }
 
-    public function all()
+    public function all(): array
     {
-
+        return [];
     }
 }
