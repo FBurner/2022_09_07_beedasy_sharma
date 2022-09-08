@@ -9,8 +9,5 @@ use Bramus\Router\Router as BaseRouter;
 
 class Router extends BaseRouter implements RouterContract
 {
-    private function invoke($fn, array $params =[])
-    {
 
-    }
 }
