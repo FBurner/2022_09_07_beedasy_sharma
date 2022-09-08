@@ -14,7 +14,7 @@ class UserRepository extends BaseRepository
         return $this->authenticatedUser;
     }
 
-    public function authenticate(User $user)
+    public function authenticate(User $user): bool
     {
 
     }
