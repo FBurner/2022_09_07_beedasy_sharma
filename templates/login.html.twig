@@ -5,8 +5,8 @@
         <div class="error">{{ error }}</div>
     {% endif %}
     <form method="post" action="/login">
-        <label>Benutzername: <input type="text"></label>
-        <label>Passwort: <input type="password"></label>
+        <label>Benutzername: <input type="text" name="email"></label>
+        <label>Passwort: <input type="password" name="password"></label>
         <input type="submit">
     </form>
 {% endblock %}

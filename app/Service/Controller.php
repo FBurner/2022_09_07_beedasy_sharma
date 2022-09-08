@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Model\User as AuthenticatedUser;
 use App\Service\Repository\UserRepository;
+use JetBrains\PhpStorm\NoReturn;
 use Psr\Container\ContainerInterface;
 use Twig\Environment as Twig;
 
@@ -36,7 +37,7 @@ class Controller
        echo $this->twig->render($template, $context);
     }
 
-    public function redirect(string $path): void
+    #[NoReturn] public function redirect(string $path): void
     {
         header(sprintf('Location: %s', $path));
         die();
