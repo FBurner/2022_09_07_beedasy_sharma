@@ -20,13 +20,13 @@ return [
         return new Twig($loader);
     },
     UserRepository::class => function (ContainerInterface $c) {
-        return new UserRepository($c->get(Db::class));
+        return new PostRepository($c->get(Db::class));
     },
     PostRepository::class => function (ContainerInterface $c) {
         return new PostRepository($c->get(Db::class));
     },
     PostController::class => function (ContainerInterface $c) {
-        $controller = new PostController($c->get(PostRepository::class));
+        $controller = new PostController($c->get(PostRepository::class), $c);
 
         $controller->setTemplatingEngine($c->get(Twig::class));
 
