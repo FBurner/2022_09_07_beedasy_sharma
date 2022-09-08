@@ -11,6 +11,8 @@ class Controller
     public function setTemplatingEngine(Environment $twig): void
     {
         $this->twig = $twig;
+
+        $this->twig->addGlobal('user');
     }
 
     public function render(string $template, array $context = []): void
