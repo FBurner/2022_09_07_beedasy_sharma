@@ -38,6 +38,8 @@ class UserRepository extends BaseRepository
             ])
         );
 
-        return $violations->count() === 0;
+        if ($violations->count() > 0) {
+            return false;
+        }
     }
 }
