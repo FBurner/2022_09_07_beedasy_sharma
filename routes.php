@@ -6,7 +6,7 @@ use App\Service\Router;
 
 $router = new Router();
 
-$router->get('/', function () {
+$router->get('/', function () use($container) {
     echo 'lol';
 });
 
