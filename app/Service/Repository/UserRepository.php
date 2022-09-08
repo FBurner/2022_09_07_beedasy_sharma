@@ -27,7 +27,7 @@ class UserRepository extends BaseRepository
             ],
             new Assert\Collection([
                 'email' => [
-                    new Constraints\Length(['min' => 10]),
+                    new Constraints\Email(),
                     new Constraints\NotBlank(),
                 ],
                 'password' =>
@@ -37,7 +37,7 @@ class UserRepository extends BaseRepository
                     ]
             ])
         );
-var_dump($violations->get(0));exit;
-        return $violations->count() > 0;
+
+        return $violations->count() === 0;
     }
 }
