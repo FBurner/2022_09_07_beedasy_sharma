@@ -23,18 +23,20 @@ class UserRepository extends BaseRepository
             [
                 'email' => $user->getEmail(),
                 'password' => $user->getPassword()
-            ], [
+            ],
+            [
                 'email' => [
                     new Constraints\Length(['min' => 10]),
                     new Constraints\NotBlank(),
                 ],
                 'password' =>
-                [
-                    new Constraints\Length(['min' => 10]),
-                    new Constraints\NotBlank(),
-                ]
-        ]);
+                    [
+                        new Constraints\Length(['min' => 10]),
+                        new Constraints\NotBlank(),
+                    ]
+            ]
+        );
 
-        return false;
+        return $violations->count() > 0;
     }
 }
