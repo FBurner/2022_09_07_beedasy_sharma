@@ -32,7 +32,7 @@ class UserRepository extends BaseRepository
                 ],
                 'password' =>
                     [
-                        new Constraints\Length(['min' => 10]),
+                        new Constraints\Length(['min' => 8]),
                         new Constraints\NotBlank(),
                     ]
             ])
