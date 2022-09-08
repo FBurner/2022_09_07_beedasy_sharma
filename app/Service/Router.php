@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use App\Contracts\Router as RouterContract;
+use App\Contract\Router as RouterContract;
 use Bramus\Router\Router as BaseRouter;
 use Psr\Container\ContainerInterface;
 

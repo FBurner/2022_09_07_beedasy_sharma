@@ -1,6 +1,6 @@
 <?php
 
-use App\Contracts\Router;
+use App\Contract\Router;
 
 function routes(Router $router): void
 {
