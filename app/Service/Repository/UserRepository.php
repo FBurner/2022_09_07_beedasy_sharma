@@ -14,6 +14,10 @@ class UserRepository extends BaseRepository
 
     public function getAuthenticatedUser(): ?User
     {
+        if (!empty($_SESSION['user'])) {
+            $this->authenticatedUser = $_SESSION['user'];
+        }
+
         return $this->authenticatedUser;
     }
 
